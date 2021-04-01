@@ -55,8 +55,8 @@ class DrawingUtil {
             const sfj3 : number = ScaleUtil.divideScale(sfj, 2, miniParts)
             context.save()
             context.translate(gap * (2 * j + 1), 0)
-            DrawingUtil.drawCircle(context, 0, r + (h - 2 * r) * sfj3, r * sfj1)
-            DrawingUtil.drawLine(context, -r * sfj1, h - r, r * sfj1, h - r)
+            DrawingUtil.drawCircle(context, 0, r + (h - 3 * r) * sfj3, r * sfj1)
+            DrawingUtil.drawLine(context, -r * sfj2, h - r, r * sfj2, h - r)
             context.restore()
         }
     }
