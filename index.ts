@@ -204,3 +204,25 @@ class BounceBallInLine {
         this.curr.startUpdating(cb)
     }
 }
+
+class Renderer {
+
+    bbil : BounceBallInLine = new BounceBallInLine()
+    animator : Animator = new Animator()
+
+    render(context : CanvasRenderingContext2D) {
+        this.bbil.draw(context)
+    }
+
+    handleTap(cb : Function) {
+        this.bbil.startUpdating(() => {
+            this.animator.start(() => {
+                cb()
+                this.bbil.update(() => {
+                    this.animator.stop()
+                    cb()
+                })
+            })
+        })
+    }
+}
